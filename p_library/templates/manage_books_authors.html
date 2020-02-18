@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <h1>Create multiple Authors and Books</h1>
+    <form method="post">
+      {% csrf_token %}
+      {% for form in author_formset %}
+            {{ form.as_ul }}
+            <br>
+      {% endfor %}
+
+      {% for form in book_formset %}
+        {{ form.as_ul }}
+            <br>
+      {% endfor %}
+        <input type="submit" value="Сохранить"/>
+    </form>
+</div>
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container">
+    <h1 class="alert-primary">Enter fields for both Authors </h1>
+    {% csrf_token %}
+    {% for form in author_formset %}
+        {{ form.as_ul }}
+    <br>
+    {% endfor %}
+
+    <input type="submit" value="Сохранить"/>
+
+    </div>
+{% endblock %}
